@@ -1,0 +1,20 @@
+{% extends 'base/home.html' %}
+{% block content %}
+
+<div class="navbar">
+    <a href="{% url 'tareas' %}">Ingresar</a>
+</div>
+
+<div class="cuerpo-tarjeta">
+    <form method="POST">
+    {% csrf_token %}
+    {{form.as_p}}
+    <input class="boton" type="submit" value="Ingresar">
+    </form>
+    <p>No tienes una cuenta? <a href="{% url 'registro' %}">Registrate</a></p>
+</div>
+
+
+
+{% endblock content %}
+

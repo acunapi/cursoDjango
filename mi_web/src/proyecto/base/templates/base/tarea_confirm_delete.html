@@ -1,0 +1,15 @@
+{% extends 'base/home.html' %}
+{% block content %}
+
+<div class="navbar">
+    <a href="{% url 'tareas' %}">&#x1F860</a>
+</div>
+<div class="cuerpo-tarjeta">
+    <form method="POST">
+    {% csrf_token %}
+    <p>Vas a eliminar esta tarea: "{{tareas}}"</p>
+    <input class="boton" type="submit" value="Eliminar">
+    </form>
+</div>
+
+{% endblock content %}
